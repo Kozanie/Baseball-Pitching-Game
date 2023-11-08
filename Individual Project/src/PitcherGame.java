@@ -6,6 +6,9 @@ public class PitcherGame
 			{
 			//added during class 
 			System.out.println("Hello World");
+			
+			//added @ home
+			System.out.println("Hello");
 			}
 
 	}
