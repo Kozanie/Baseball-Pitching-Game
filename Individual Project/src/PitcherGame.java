@@ -5,10 +5,11 @@ public class PitcherGame
 		
 		public static void main(String[] args)
 			{
+			intro();
 			startGame();
 			}
 		
-		public static void startGame()
+		public static void intro()
 			{
 			String dummy;
 			Scanner userInput = new Scanner(System.in);
@@ -19,9 +20,12 @@ public class PitcherGame
 			
 			System.out.println("Shohei Ohtani will be pitching against Mike Trout. \n\nPress enter to continue.");
 			dummy = userInput.nextLine();
+			
+			System.out.println("What pitch would you like to throw \n\n(1) Sweeper \n(2) Four-Seam Fastball \n(3) Cutter \n(4) Splitter \n(5) Sinker \n(6) Curveball \n(7) Slider");
+			System.out.println("\nPlease input the number ex: 1");
 			}
 		
-		public static void playGame()
+		public static void startGame()
 			{
 			
 			}
