@@ -3,22 +3,9 @@ public class Pitcher
 	{
 	private String name;
     private String team;
-    private String p1Name;
-    private int p1Location;
-    private String p2Name;
-    private int p2Location;
-    private String p3Name;
-    private int p3Location;
-    private String p4Name;
-    private int p4Location;
-    private String p5Name;
-    private int p5Location;
-    private String p6Name;
-    private int p6Location;
-    private String p7Name;
-    private int p7Location;
+    private arrayList<Pitch>;
    
-    public Pitcher(String n, String t, String p1N, int p1L, String p2N, int p2L, String p3N, int p3L, String p4N, int p4L, String p5N, int p5L, String p6N, int p6L, String p7N, int p7L)
+    public Pitcher(String n, String t, String p1N, int p1L, String p2N, int p2L, String p3N, int p3L, String p4N, int p4L, String p5N, int p5L, String p6N, int p6L)
         {
         name = n;
         team = t;
@@ -34,8 +21,6 @@ public class Pitcher
         p5Location = p5L;
         p6Name = p6N;
         p6Location = p6L;
-        p7Name = p7N;
-        p7Location = p7L;
         }
 
     public String getName()
@@ -106,15 +91,5 @@ public class Pitcher
    public int getp6Location()
     	{
     	return p6Location;
-    	}
-    
-    public String getp7Name()
-        {
-        return p7Name;
-        }
-
-    public int getp7Location()
-    	{
-    	return p7Location;
     	}
 	}
