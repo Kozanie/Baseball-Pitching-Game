@@ -2,36 +2,36 @@
 public class Hitter
 	{
 	private String playerName;
-    private int batAvg;
-    private int onBaseAvg;
-    private int swingPercent;
+    private int[][] swingPercent;
+    private int[][] contactPercent;
+    private int ballsInPlay;
 
-    public Hitter(String p, int b, int o, int s)
+    public Hitter(String p, int[][] s, int [][] c, int b)
         {
         playerName = p;
-        batAvg = b;
-        onBaseAvg = o;
         swingPercent = s;
-        
+        contactPercent = c;
+        ballsInPlay = b;
         }
 
     public String getPlayerName()
         {
         return playerName;
         }
-
-    public int getBatAvg()
-        {
-        return batAvg;
-        }
-
-    public int getOnBaseAvg()
-        {
-        return onBaseAvg;
-        }
     
-    public int swingPercent()
+    public int[][] getSwingPercent()
     	{
     	return swingPercent;
     	}
+    
+    public int[][] getContactPercent()
+    	{
+    	return contactPercent;
+    	}
+    
+    public int getBallsInPlay()
+    	{
+    	return ballsInPlay;
+    	}
+    
 	}

@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class PitcherGame
 	{
-		
+	static ArrayList<Pitch> pitch = new ArrayList<Pitch>();
+	static int[][] zone = new int[5][5];
 		public static void main(String[] args)
 			{
 			intro();
-			startGame();
+			selectPitch();
 			}
 		
 		public static void intro()
@@ -23,7 +24,7 @@ public class PitcherGame
 			
 			}
 		
-		public static void startGame()
+		public static void selectPitch()
 			{
 			Scanner userInput = new Scanner(System.in);
 			System.out.println("What pitch would you like to throw \n\n \n(1) Four-Seam Fastball \n(2) Cutter \n(3) Splitter \n(4) Sinker \n(5) Curveball \n(6) Sweeper");
@@ -31,9 +32,27 @@ public class PitcherGame
 			int pitch = userInput.nextInt();
 			}
 		
+		public static int[] generateLocation(String pitchType)
+			{
+			int randomNumber = ((int)(Math.random()*1000));
+			
+			int [] location = new int [2];
+			
+			for(int row = 0; row < 5; row++)
+				{
+				for(int col = 0; col < 5; col++)
+					{
+					zone[row][col];
+					}
+				}
+			return location;
+			}
+		
 		public static void fourSeam()
 			{
 			System.out.println("Shohei Ohtani will throw a Four-Seam Fastball");
+			zone = Data.fourSeamPitch;
+			generateLocation(zone);
 			}
 		
 		public static void cutter()
