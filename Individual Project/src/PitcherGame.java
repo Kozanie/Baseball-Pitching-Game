@@ -6,6 +6,8 @@ public class PitcherGame
 	static int[][] zone = new int[5][5];
 	static int row;
 	static int col;
+	static int[] output = new int [2];
+	static int percent;
 		public static void main(String[] args)
 			{
 			intro();
@@ -67,9 +69,9 @@ public class PitcherGame
 		
 		public static int[] generateLocation()
 			{
-			int randomNumber = ((int)(Math.random()*1000));
-			System.out.println(randomNumber);
-			int [] location = new int [2];
+			int randomNumber = ((int)(Math.random()*1000+1));
+			//System.out.println(randomNumber);
+			output = new int [2];
 			
 			for(row = 0; row < 4; row++)
 				{
@@ -78,18 +80,32 @@ public class PitcherGame
 					if(zone[row][col] >= randomNumber)
 						{
 						System.out.println(zone[row][col]);
+						return output;
 						}
 					}
 				}
-			return location;
-			
-			}
-		
+			return output;
+				}
 		
 		public static void swingContactPecrent()
 			{
-			int percent = ((int)(Math.random()*100));
+			percent = ((int)(Math.random()*100+1));
 			System.out.println(percent);
+			}
+		
+		public static void onBase()
+			{
+			int onBasePercent = ((int)(Math.random()*1000+1));
+			
+			if(onBasePercent < 335)
+				{
+				System.out.println("Trout made it on base");
+				}
+			
+			else
+				{
+				System.out.println("Trout got out!!");
+				}
 			}
 			
 		public static void fourSeam()
@@ -137,8 +153,25 @@ public class PitcherGame
 		
 		public static void fourSeamSwing()
 			{
-			swingContactPecrent();
-			//zone = Data.fourSeamSwing;
+			zone = Data.fourSeamSwing;
 			System.out.println(Data.fourSeamSwing[row][col]);
+			swingContactPecrent();
+			if(Data.fourSeamSwing[row][col] > 1 && Data.fourSeamContact[row][col] > percent)
+				{
+				System.out.println("Trout is going to swing!!");
+			fourSeamContact();
+				}
+			}
+		
+		public static void fourSeamContact()
+			{
+			zone = Data.fourSeamContact;
+			System.out.println(Data.fourSeamContact[row][col]);
+			swingContactPecrent();
+			if(Data.fourSeamContact[row][col] > 1 && Data.fourSeamContact[row][col] > percent)
+				{
+				System.out.println("Trout made contact with the ball");
+				onBase();
+				}
 			}
 	}
