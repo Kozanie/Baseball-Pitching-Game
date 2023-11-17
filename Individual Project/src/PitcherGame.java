@@ -79,7 +79,7 @@ public class PitcherGame
 					{
 					if(zone[row][col] >= randomNumber)
 						{
-						System.out.println(zone[row][col]);
+						//System.out.println(zone[row][col]);
 						return output;
 						}
 					}
@@ -90,7 +90,7 @@ public class PitcherGame
 		public static void swingContactPecrent()
 			{
 			percent = ((int)(Math.random()*100+1));
-			System.out.println(percent);
+			//System.out.println(percent);
 			}
 		
 		public static void onBase()
@@ -116,62 +116,241 @@ public class PitcherGame
 			fourSeamSwing();
 			}
 		
+		public static void fourSeamSwing()
+		{
+		zone = Data.fourSeamSwing;
+		//System.out.println(Data.fourSeamSwing[row][col]);
+		swingContactPecrent();
+		if(Data.fourSeamSwing[row][col] > 1 && Data.fourSeamContact[row][col] > percent)
+			{
+			System.out.println("Trout is going to swing!!");
+			fourSeamContact();
+			}
+		else
+			{
+			System.out.println("Trout is going to take the pitch!!");
+			}
+		}
+	
+	public static void fourSeamContact()
+		{
+		zone = Data.fourSeamContact;
+		//System.out.println(Data.fourSeamContact[row][col]);
+		swingContactPecrent();
+		if(Data.fourSeamContact[row][col] > 1 && Data.fourSeamContact[row][col] > percent)
+			{
+			System.out.println("Trout made contact with the ball.");
+			onBase();
+			}
+		
+		else
+			{
+			System.out.println("Trout swung and missed!!");
+			}
+		}
+		
 		public static void cutter()
 			{
 			System.out.println("Shohei Ohtani will throw a Cutter");
 			zone = Data.cutterPitch;
 			generateLocation();
+			cutterSwing();
 			}
+		
+		public static void cutterSwing()
+		{
+		zone = Data.cutterSwing;
+		//System.out.println(Data.cutterSwing[row][col]);
+		swingContactPecrent();
+		if(Data.cutterSwing[row][col] > 1 && Data.cutterContact[row][col] > percent)
+			{
+			System.out.println("Trout is going to swing!!");
+			cutterContact();
+			}
+		else
+			{
+			System.out.println("Trout is going to take the pitch!!");
+			}
+		}
+	
+	public static void cutterContact()
+		{
+		zone = Data.cutterContact;
+		//System.out.println(Data.cutterContact[row][col]);
+		swingContactPecrent();
+		if(Data.cutterContact[row][col] > 1 && Data.cutterContact[row][col] > percent)
+			{
+			System.out.println("Trout made contact with the ball.");
+			onBase();
+			}
+		
+		else
+			{
+			System.out.println("Trout swung and missed!!");
+			}
+		}
 		
 		public static void splitter()
 			{
 			System.out.println("Shohei Ohtani will throw a Splitter");
 			zone = Data.splitterPitch;
 			generateLocation();
+			splitterSwing();
 			}
+		
+		public static void splitterSwing()
+		{
+		zone = Data.splitterSwing;
+		//System.out.println(Data.splitterSwing[row][col]);
+		swingContactPecrent();
+		if(Data.splitterSwing[row][col] > 1 && Data.splitterContact[row][col] > percent)
+			{
+			System.out.println("Trout is going to swing!!");
+			splitterContact();
+			}
+		else
+			{
+			System.out.println("Trout is going to take the pitch!!");
+			}
+		}
+	
+	public static void splitterContact()
+		{
+		zone = Data.splitterContact;
+		//System.out.println(Data.splitterContact[row][col]);
+		swingContactPecrent();
+		if(Data.splitterContact[row][col] > 1 && Data.splitterContact[row][col] > percent)
+			{
+			System.out.println("Trout made contact with the ball.");
+			onBase();
+			}
+		
+		else
+			{
+			System.out.println("Trout swung and missed!!");
+			}
+		}
 		
 		public static void sinker()
 			{
 			System.out.println("Shohei Ohtani will throw a Sinker");
 			zone = Data.sinkerPitch;
 			generateLocation();
+			sinkerSwing();
 			}
+		
+		public static void sinkerSwing()
+		{
+		zone = Data.sinkerSwing;
+		//System.out.println(Data.sinkerSwing[row][col]);
+		swingContactPecrent();
+		if(Data.sinkerSwing[row][col] > 1 && Data.sinkerContact[row][col] > percent)
+			{
+			System.out.println("Trout is going to swing!!");
+			sinkerContact();
+			}
+		else
+			{
+			System.out.println("Trout is going to take the pitch!!");
+			}
+		}
+	
+	public static void sinkerContact()
+		{
+		zone = Data.sinkerContact;
+		//System.out.println(Data.sinkerContact[row][col]);
+		swingContactPecrent();
+		if(Data.sinkerContact[row][col] > 1 && Data.sinkerContact[row][col] > percent)
+			{
+			System.out.println("Trout made contact with the ball.");
+			onBase();
+			}
+		
+		else
+			{
+			System.out.println("Trout swung and missed!!");
+			}
+		}
 		
 		public static void curve()
 			{
 			System.out.println("Shohei Ohtani will throw a Curve");
 			zone = Data.curvePitch;
 			generateLocation();
+			curveSwing();
 			}
+		
+		public static void curveSwing()
+		{
+		zone = Data.curveSwing;
+		//System.out.println(Data.curveSwing[row][col]);
+		swingContactPecrent();
+		if(Data.curveSwing[row][col] > 1 && Data.curveContact[row][col] > percent)
+			{
+			System.out.println("Trout is going to swing!!");
+			curveContact();
+			}
+		else
+			{
+			System.out.println("Trout is going to take the pitch!!");
+			}
+		}
+	
+	public static void curveContact()
+		{
+		zone = Data.curveContact;
+		//System.out.println(Data.curveContact[row][col]);
+		swingContactPecrent();
+		if(Data.curveContact[row][col] > 1 && Data.curveContact[row][col] > percent)
+			{
+			System.out.println("Trout made contact with the ball.");
+			onBase();
+			}
+		
+		else
+			{
+			System.out.println("Trout swung and missed!!");
+			}
+		}
 		
 		public static void sweeper()
 			{
 			System.out.println("Shohei Ohtani will throw a Sweeper");
 			zone = Data.sweeperPitch;
 			generateLocation();
+			sweeperSwing();
+			}
+		public static void sweeperSwing()
+		{
+		zone = Data.sweeperSwing;
+		//System.out.println(Data.splitterSwing[row][col]);
+		swingContactPecrent();
+		if(Data.sweeperSwing[row][col] > 1 && Data.sweeperContact[row][col] > percent)
+			{
+			System.out.println("Trout is going to swing!!");
+			sweeperContact();
+			}
+		else
+			{
+			System.out.println("Trout is going to take the pitch!!");
+			}
+		}
+	
+	public static void sweeperContact()
+		{
+		zone = Data.sweeperContact;
+		//System.out.println(Data.splitterContact[row][col]);
+		swingContactPecrent();
+		if(Data.sweeperContact[row][col] > 1 && Data.sweeperContact[row][col] > percent)
+			{
+			System.out.println("Trout made contact with the ball.");
+			onBase();
 			}
 		
-		public static void fourSeamSwing()
+		else
 			{
-			zone = Data.fourSeamSwing;
-			System.out.println(Data.fourSeamSwing[row][col]);
-			swingContactPecrent();
-			if(Data.fourSeamSwing[row][col] > 1 && Data.fourSeamContact[row][col] > percent)
-				{
-				System.out.println("Trout is going to swing!!");
-			fourSeamContact();
-				}
+			System.out.println("Trout swung and missed!!");
 			}
+		}
 		
-		public static void fourSeamContact()
-			{
-			zone = Data.fourSeamContact;
-			System.out.println(Data.fourSeamContact[row][col]);
-			swingContactPecrent();
-			if(Data.fourSeamContact[row][col] > 1 && Data.fourSeamContact[row][col] > percent)
-				{
-				System.out.println("Trout made contact with the ball");
-				onBase();
-				}
-			}
 	}
